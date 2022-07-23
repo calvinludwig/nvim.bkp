@@ -7,3 +7,5 @@ vim.cmd([[
         set background=dark
     endtry
 ]])
+
+require'impatient'.enable_profile()
