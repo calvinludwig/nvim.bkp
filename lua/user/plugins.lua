@@ -79,6 +79,14 @@ return packer.startup(function()
 	use("numToStr/Comment.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("akinsho/toggleterm.nvim")
+
+    -- Rust
+    use("simrat39/rust-tools.nvim")
+
+
+    --Debug
+    use("mfussenegger/nvim-dap")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

@@ -76,7 +76,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	vim.notify(client.name .. " starting...")
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
