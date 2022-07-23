@@ -26,6 +26,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-w>", ":Bdelete <cr>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle <cr>", opts)
+keymap("n", "<leader>d", ":lua vim.lsp.buf.formatting_sync() <cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +1<CR>", opts)
