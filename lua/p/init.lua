@@ -3,7 +3,6 @@ require("impatient").enable_profile()
 require("p.packer")
 require("p.lsp")
 require("p.tree-sitter")
-require("p.cmp")
 
 require("p.theme")
 
@@ -16,3 +15,7 @@ require("p.bufferline")
 require("p.gitsigns")
 require("p.toggleterm")
 require("p.alpha")
+
+require("p.languages")
+-- CMP at the end of file
+require("p.cmp")

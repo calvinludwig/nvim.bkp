@@ -29,35 +29,5 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
     end
 
-    if server == "rust_analyzer" then
-        local extension_path = vim.env.HOME .. '/.vscode-server/extensions/vadimcn.vscode-lldb-1.7.3/'
-        local codelldb_path = extension_path .. 'adapter/codelldb'
-        local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
-        require("rust-tools").setup({
-            server = {
-                on_attach = require("p.lsp.handlers").on_attach,
-                capabilities = require("p.lsp.handlers").capabilities,
-                settings = {
-                    ["rust-analyzer"] = {
-                        checkOnSave = {
-                            command = "clippy"
-                        },
-                        lens = {
-                            enable = true
-                        }
-                    }
-                }
-            },
-            dap = {
-                adapter = require('rust-tools.dap').get_codelldb_adapter(
-                    codelldb_path,
-                    liblldb_path
-                )
-            }
-        })
-        goto continue
-    end
-
     lspconfig[server].setup(opts)
-    ::continue::
 end

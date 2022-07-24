@@ -19,7 +19,7 @@ end
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -91,19 +91,7 @@ return packer.startup(function()
 
     -- Rust
     use("simrat39/rust-tools.nvim")
-    use({
-        "saecki/crates.nvim",
-        event = { "BufRead Cargo.toml" },
-        requires = { { "nvim-lua/plenary.nvim" } },
-        config = function()
-            require("crates").setup({
-                null_ls = {
-                    enabled = true,
-                    name = "crates.nvim",
-                },
-            })
-        end,
-    })
+    use("saecki/crates.nvim")
 
     --Debug
     use("mfussenegger/nvim-dap")

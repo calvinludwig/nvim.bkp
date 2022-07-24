@@ -6,7 +6,7 @@ local options = {
 	conceallevel = 0, -- so that `` is visible in markdown files
 	fileencoding = "utf-8", -- the encoding written to a file
 	hlsearch = true, -- highlight all matches on previous search pattern
-    incsearch= true,
+	incsearch = true,
 	ignorecase = true, -- ignore case in search patterns
 	mouse = "a", -- allow the mouse to be used in neovim
 	pumheight = 10, -- pop up menu height
@@ -22,24 +22,28 @@ local options = {
 	undofile = true, -- enable persistent undo
 	updatetime = 0, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-	expandtab = true, -- convert tabs to spaces
-	shiftwidth = 4, -- the number of spaces inserted for each indentation
-	tabstop = 4, -- insert 4 spaces for a tab
-	cursorline = true, -- highlight the current line
-	number = true, -- set numbered lines
+
+	-- use tabs https://lea.verou.me/2012/01/why-tabs-are-clearly-superior/
+	expandtab = false,
+	shiftwidth = 4,
+	tabstop = 8,
+
+	cursorline = true,
+	cursorcolumn = true,
+	number = true,
+	relativenumber = false,
 	laststatus = 3,
+
 	showcmd = false,
 	ruler = false,
-	relativenumber = false, -- set relative numbered lines
 	numberwidth = 2, -- set number column width to 2 {default 4}
 	signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
 	wrap = false, -- display lines as one long line
-	scrolloff = 8, -- is one of my fav
+
+	scrolloff = 8,
 	sidescrolloff = 8,
-	guifont = "monospace:h17", -- the font used in graphical neovim applications
-	-- colorcolumn = "80",
-	-- colorcolumn = "120",
 }
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.fillchars.eob = " "

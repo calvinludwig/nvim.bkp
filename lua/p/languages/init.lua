@@ -1,0 +1,1 @@
+require("p.languages.rust")
