@@ -10,4 +10,4 @@ local themes = {
     "rose",
 }
 
-pcall(require, "user.theme." .. themes[4])
+pcall(require, "p.theme." .. themes[4])
