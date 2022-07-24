@@ -64,7 +64,6 @@ return packer.startup(function()
 
     -- snippets
     use("L3MON4D3/LuaSnip")
-    use("rafamadriz/friendly-snippets")
 
     -- telescope
     use("nvim-telescope/telescope.nvim")

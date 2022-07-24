@@ -3,18 +3,6 @@ vim.cmd([[ set completeopt=menu,menuone,noselect]])
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-luasnip.filetype_extend("rust")
-luasnip.filetype_extend("typescript")
-luasnip.filetype_extend("javascript")
-luasnip.filetype_extend("html")
-luasnip.filetype_extend("css")
-luasnip.filetype_extend("dart")
-luasnip.filetype_extend("lua")
-luasnip.filetype_extend("php")
-luasnip.filetype_extend("sql")
-luasnip.filetype_extend("typescriptreact")
-luasnip.filetype_extend("javascriptreact")
-
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local kind_icons = {
