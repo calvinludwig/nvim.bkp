@@ -23,10 +23,10 @@ local options = {
 	updatetime = 0, -- faster completion (4000ms default)
 	writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
-	-- use tabs https://lea.verou.me/2012/01/why-tabs-are-clearly-superior/
-	expandtab = false,
+	expandtab = true,
+	softtabstop = 4,
 	shiftwidth = 4,
-	tabstop = 8,
+	tabstop = 4,
 
 	cursorline = true,
 	cursorcolumn = true,
