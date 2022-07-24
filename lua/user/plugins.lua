@@ -42,25 +42,18 @@ return packer.startup(function()
     use("wbthomason/packer.nvim")
     use("nvim-lua/popup.nvim")
     use("nvim-lua/plenary.nvim")
-    use("folke/tokyonight.nvim")
-    use("nvim-lualine/lualine.nvim")
-    use("kyazdani42/nvim-web-devicons")
-    use("akinsho/bufferline.nvim")
-    use("moll/vim-bbye")
-    use({
-        "kyazdani42/nvim-tree.lua",
-        tag = "nightly",
-    })
-    use("lewis6991/gitsigns.nvim")
-    use("goolord/alpha-nvim")
     use("lewis6991/impatient.nvim")
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    })
-    use("nvim-telescope/telescope.nvim")
-    use("nvim-telescope/telescope-media-files.nvim")
 
+    -- LSP
+    use("neovim/nvim-lspconfig")
+    use("williamboman/nvim-lsp-installer")
+    use("jose-elias-alvarez/null-ls.nvim")
+
+    --Tree Sitter
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("JoosepAlviste/nvim-ts-context-commentstring")
+
+    -- CMP
     use("hrsh7th/nvim-cmp")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-path")
@@ -73,30 +66,45 @@ return packer.startup(function()
     use("L3MON4D3/LuaSnip")
     use("rafamadriz/friendly-snippets")
 
-    use("neovim/nvim-lspconfig")
-    use("williamboman/nvim-lsp-installer")
-    use("jose-elias-alvarez/null-ls.nvim")
+    -- telescope
+    use("nvim-telescope/telescope.nvim")
+    use("nvim-telescope/telescope-project.nvim")
 
+    -- ColorSchemes
+    use("folke/tokyonight.nvim")
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "luisiacc/gruvbox-baby", branch = "main" })
+    use({ "rose-pine/neovim", as = "rose-pine", tag = "v1.*" })
+
+    -- Interface
+    use("kyazdani42/nvim-web-devicons")
+    use("nvim-lualine/lualine.nvim")
+    use("akinsho/bufferline.nvim")
+    use("moll/vim-bbye")
+    use("kyazdani42/nvim-tree.lua")
+    use("lewis6991/gitsigns.nvim")
+    use("goolord/alpha-nvim")
+    use("akinsho/toggleterm.nvim")
+
+    -- Code
     use("windwp/nvim-autopairs")
     use("numToStr/Comment.nvim")
-    use("JoosepAlviste/nvim-ts-context-commentstring")
-    use("akinsho/toggleterm.nvim")
 
     -- Rust
     use("simrat39/rust-tools.nvim")
-    use {
-        'saecki/crates.nvim',
+    use({
+        "saecki/crates.nvim",
         event = { "BufRead Cargo.toml" },
-        requires = { { 'nvim-lua/plenary.nvim' } },
+        requires = { { "nvim-lua/plenary.nvim" } },
         config = function()
-            require('crates').setup({
+            require("crates").setup({
                 null_ls = {
                     enabled = true,
-                    name = "crates.nvim"
-                }
+                    name = "crates.nvim",
+                },
             })
         end,
-    }
+    })
 
     --Debug
     use("mfussenegger/nvim-dap")
