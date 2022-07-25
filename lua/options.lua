@@ -33,6 +33,7 @@ local options = {
 	number = true,
 	relativenumber = false,
 	laststatus = 3,
+    list = true,
 
 	showcmd = false,
 	ruler = false,

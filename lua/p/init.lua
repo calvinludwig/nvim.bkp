@@ -1,6 +1,7 @@
 require("impatient").enable_profile()
 
 require("p.packer")
+require "p.mason"
 require("p.lsp")
 require("p.tree-sitter")
 
