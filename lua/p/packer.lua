@@ -15,6 +15,8 @@ local packer_function = function ()
     --Tree Sitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("JoosepAlviste/nvim-ts-context-commentstring")
+    use("windwp/nvim-ts-autotag")
+    use("RRethy/vim-illuminate")
 
     -- CMP
     use("hrsh7th/nvim-cmp")
